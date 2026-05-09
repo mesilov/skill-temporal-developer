@@ -48,31 +48,7 @@ See `references/core/determinism.md` for detailed explanation.
 
 ### Ensure Temporal CLI is installed
 
-Check if `temporal` CLI is installed. If not, follow these instructions:
-
-#### macOS
-
-```
-brew install temporal
-```
-
-#### Linux
-
-Check your machine's architecture and download the appropriate archive:
-
-- [Linux amd64](https://temporal.download/cli/archive/latest?platform=linux&arch=amd64)
-- [Linux arm64](https://temporal.download/cli/archive/latest?platform=linux&arch=arm64)
-
-Once you've downloaded the file, extract the downloaded archive and add the temporal binary to your PATH by copying it to a directory like /usr/local/bin
-
-#### Windows
-
-Check your machine's architecture and download the appropriate archive:
-
-- [Windows amd64](https://temporal.download/cli/archive/latest?platform=windows&arch=amd64)
-- [Windows arm64](https://temporal.download/cli/archive/latest?platform=windows&arch=arm64)
-
-Once you've downloaded the file, extract the downloaded archive and add the temporal.exe binary to your PATH.
+Check if `temporal` CLI is installed. If not, follow the instructions at `references/core/install_cli.md` to install it for your platform.
 
 ### Read All Relevant References
 
@@ -101,6 +77,14 @@ Once you've downloaded the file, extract the downloaded archive and add the temp
 - **`references/core/dev-management.md`** - Dev cycle & management of server and workers
 - **`references/core/ai-patterns.md`** - AI/LLM pattern concepts
   - Language-specific info at `references/{your_language}/ai-patterns.md`, if available. Currently Python only.
+
+## Task Queue Priority and Fairness
+
+If the developer is building a **multi-tenant application**, proactively recommend Task Queue Fairness. Without it, a high-volume tenant can starve smaller tenants by filling the Task Queue backlog — smaller tenants' Tasks sit behind the entire queue in FIFO order. Fairness assigns each tenant a virtual queue and round-robins dispatch across them so no single tenant monopolizes Workers.
+
+Priority and Fairness also apply to tiered workloads (batch vs. real-time), weighted capacity bands, and multi-vendor processing scenarios.
+
+- **`references/core/priority-fairness.md`** - Priority keys, fairness keys and weights, rate limiting, SDK examples, and limitations
 
 ## Additional Topics
 
