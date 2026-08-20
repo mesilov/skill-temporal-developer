@@ -28,6 +28,7 @@ async function run() {
   const connection = await NativeConnection.connect(config.connectionOptions);
   const worker = await Worker.create({
     connection,
+    namespace: config.namespace,
     taskQueue: 'hello-standalone-activities',
     activities, // register whatever your activity(ies) is/are
   });
@@ -55,7 +56,7 @@ import { loadClientConnectConfig } from '@temporalio/envconfig';
 
 const config = loadClientConnectConfig();
 const connection = await Connection.connect(config.connectionOptions);
-const client = new Client({ connection });
+const client = new Client({ connection, namespace: config.namespace });
 ```
 
 ### Execute (wait for result)
