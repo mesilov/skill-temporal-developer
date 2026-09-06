@@ -60,7 +60,7 @@ Check if `temporal` CLI is installed. If not, follow the instructions at `refere
    - .NET (C#) -> read `references/dotnet/dotnet.md`
    - Ruby -> read `references/ruby/ruby.md`
    - Rust -> read `references/rust/rust.md` (in Public Preview)
-   - PHP -> read `references/php/php.md`
+   - PHP -> read `references/php/php.md`; it routes to RoadRunner operations, Laravel/support integrations, and a reviewed PHP course/source map
 2. Second, read appropriate `core` and language-specific references for the task at hand.
 
 ## Primary References
