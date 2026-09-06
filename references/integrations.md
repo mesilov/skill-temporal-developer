@@ -1,6 +1,6 @@
 # Third-Party Integrations Catalog
 
-Temporal ships and supports a growing set of integrations with third-party frameworks and SDKs — typically as plugins, contrib modules, or starter libraries. This file is the catalog. Each integration has a dedicated reference under `references/{language}/integrations/`.
+This catalog includes Temporal-maintained and community integrations with third-party frameworks and SDKs — typically plugins, contrib modules, or starter libraries. This file is the catalog. Each integration has a dedicated reference under `references/{language}/integrations/`.
 
 ## How to use this catalog
 
@@ -26,3 +26,5 @@ Temporal ships and supports a growing set of integrations with third-party frame
 | Braintrust (`@braintrust/temporal`) | TypeScript | LLM observability: `BraintrustTemporalPlugin` registers on Client + Worker to trace Workflow/Activity spans; canonical guide hosted by Braintrust | `references/typescript/integrations/braintrust.md` | `references/core/ai-patterns.md` |
 | Mastra (`@mastra/temporal`, Public Preview) | TypeScript | Build-time transform of Mastra `createWorkflow`/`createStep` definitions into Temporal Workflows and Activities; `MastraPlugin` auto-registers Activities on the Worker | `references/typescript/integrations/mastra.md` | `references/typescript/typescript.md`, `references/core/ai-patterns.md` |
 | Vercel AI SDK (`@temporalio/ai-sdk`, Public Preview) | TypeScript | Durable Vercel AI SDK agents: `AiSdkPlugin` wraps `generateText` and other AI SDK calls as Activities; `temporalProvider.languageModel()` provides the workflow-safe model; tools dispatch via `proxyActivities`; stateless MCP servers register through `mcpClientFactories` and are used in-workflow via `TemporalMCPClient` | `references/typescript/integrations/vercel-ai-sdk.md` | `references/core/ai-patterns.md` |
+| Laravel (`keepsuit/laravel-temporal`, community) | PHP | Framework discovery, DI/lifecycle, converters, worker and test helpers | [PHP Laravel guide](php/integrations/laravel-temporal.md) | `references/php/workers.md`, `references/php/testing.md` |
+| Temporal PHP Support (`temporal-php/support`, community) | PHP | Optional stub factories, default attributes and VirtualPromise typing | [PHP support guide](php/integrations/support.md) | `references/php/php.md` |
